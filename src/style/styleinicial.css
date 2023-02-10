@@ -1,0 +1,92 @@
+html, body, div, h1,h2 ,p, ul , li, section{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: #fff;
+  }
+  to{
+    border-right-color: transparent;
+  }
+}
+@keyframes girar2{
+  0%{
+    rotate: -190deg;
+  }
+  10%{
+    rotate: -60deg;
+  }
+  30%{
+    rotate: 10deg;
+  }
+  50%{
+    rotate: 100deg;
+  }
+  80%{
+    rotate: 20deg;
+  }
+  100%{
+    rotate: 160deg;
+  }
+
+  
+}
+
+@keyframes girar1{
+  0%{
+    rotate: 60deg;
+  }
+  10%{
+    rotate: -60deg;
+  }
+  30%{
+    rotate: 10deg;
+  }
+  50%{
+    rotate: 60deg;
+  }
+  80%{
+    rotate: 20deg;
+  }
+  100%{
+    rotate: 60deg;
+  }
+
+  
+}
+
+@keyframes tremedor {
+  0%{
+    transform: translateX(-20px);
+  }
+  50%{
+    transform: translateX(40px);
+  }
+  100%{
+    transform: translateX(-20px);
+  }
+}
+
+.lampada{
+  content: '';
+  display: block;
+ 
+  border-radius: 80% 30% 30% 80%;
+  border-right: 8px solid black;
+  border-bottom: 4px solid black;
+  border-top:  4px solid black;
+  transition: 0.5s;
+  transition-property: box-shadow;
+  background: transparent;
+  position: absolute;
+  z-index: 1;
+  
+}
+
+
+ 
+
+

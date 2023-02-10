@@ -14,8 +14,6 @@ import { useTypewriter } from 'react-simple-typewriter';
 const Container = styled.section<{ tam: number }>`
   margin: 0 auto;
   position: relative;
-  width: 100vw;
-  height: 100vh;
   max-width: 100%;
   display: grid;
   place-items: center;
@@ -89,9 +87,6 @@ const Palavra = styled.span<{ text: string; length: number }>`
   transition: 1s;
 `;
 
-const Foto = styled.div<{ tam: number }>`
-  overflow: hidden;
-`;
 
 const Lamp = styled.div<{ ligar: number; tam: number; screen: number }>`
   left: ${({ screen }) => {
@@ -251,32 +246,8 @@ const Fot = styled.img<{ tam: number }>`
   transform: scale(${({ tam }) => 1 + tam});
   transition: 0.8s;
   max-width: 100%;
-  
-
   z-index: 1;
-
-  @keyframes test2 {
-    0% {
-      transform: translateY(10px);
-      transition: 2s;
-    }
-    30% {
-      transform: translateX(50px);
-      transition: 2s;
-    }
-    60% {
-      transform: translateY(50px);
-      transition: 2s;
-    }
-    80% {
-      transform: translateX(-50px);
-      transition: 2s;
-    }
-    100% {
-      transform: translateY(10px);
-      transition: 2s;
-    }
-  }
+  
 `;
 
 
@@ -346,23 +317,21 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
 
   },[screen])
 
-console.log(background)
+
 
   window.addEventListener('mousemove', parallax);
   return (
     <>
-      <Foto tam={valorScroll}>
-        <Fot
+      <Container tam={valorScroll} className="teste1">
+      <Fot
           onMouseMove={ligar}
           className="computer"
           src={background}
           tam={valorScroll / 50}
           alt=""
         />
-       
-      </Foto>
-      <Container tam={valorScroll} className="teste1">
         <ContainerIntro tam={valorScroll} screen={screen} text={text}>
+  
           <img src={texfoto} alt="foto perfil" />
           <div>
             <Palavra text={text} length={18} className="title-inicial">

@@ -63,22 +63,22 @@ const Img = styled.img<{ tam: number }>`
 
 const SecondTela: React.FC<Props> = ({ valorScroll }) => {
  
-
+console.log(valorScroll)
   return (
     <>
       <Img tam={valorScroll} src={tex} />
       <Container tam={valorScroll}>
-        <Title tam={valorScroll} offset={500}>
+        <Title tam={valorScroll} offset={200}>
           Teste zoom 1
         </Title>
       </Container>
       <Container tam={valorScroll}>
-        <Title tam={valorScroll} offset={1400}>
+        <Title tam={valorScroll} offset={700}>
           Teste zoom 2
         </Title>
       </Container>
       <Container tam={valorScroll}>
-        <Title tam={valorScroll} offset={2200}>
+        <Title tam={valorScroll} offset={1400}>
           Teste zoom 3
         </Title>
       </Container>

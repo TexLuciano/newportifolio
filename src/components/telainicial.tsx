@@ -91,8 +91,6 @@ const Palavra = styled.span<{ text: string; length: number }>`
 
 const Foto = styled.div<{ tam: number }>`
   overflow: hidden;
-  background: red;
-  position: static;
 `;
 
 const Lamp = styled.div<{ ligar: number; tam: number; screen: number }>`
@@ -248,7 +246,7 @@ const Poiter3 = styled.img<{ tam: number; screen: number }>`
 
 const Fot = styled.img<{ tam: number }>`
   overflow: hidden;
-  display: ${({ tam }) => (tam >= 4 || tam >= 5 ? 'none' : 'block')};
+  display: ${({ tam }) => (tam >= 2 || tam >= 5 ? 'none' : 'block')};
   opacity: ${({ tam }) => (tam >= 4 || tam >= 5 ? '0' : '1')};
   transform: scale(${({ tam }) => 1 + tam});
   transition: 0.8s;
@@ -280,6 +278,7 @@ const Fot = styled.img<{ tam: number }>`
     }
   }
 `;
+
 
 export function TelaInicial({ valorScroll }: { valorScroll: number }) {
   const [ligarLuz, setLigarLuz] = useState(0);
@@ -360,6 +359,7 @@ console.log(background)
           tam={valorScroll / 50}
           alt=""
         />
+       
       </Foto>
       <Container tam={valorScroll} className="teste1">
         <ContainerIntro tam={valorScroll} screen={screen} text={text}>

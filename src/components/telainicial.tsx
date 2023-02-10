@@ -251,7 +251,7 @@ const Fot = styled.img<{ tam: number }>`
   transform: scale(${({ tam }) => 1 + tam});
   transition: 0.8s;
   max-width: 100%;
-  position: absolute;
+  
 
   z-index: 1;
 

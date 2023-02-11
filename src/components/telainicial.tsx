@@ -126,16 +126,14 @@ const Lamp = styled.div<{ ligar: number; tam: number; screen: number }>`
   }};
   top: ${({ screen }) => {
     const topValue =
-      screen >= 1600
-        ? screen / 7 + 30
-        : screen >= 1500
-        ? screen / 7 + 20
-        : screen >= 1400
-        ? screen / 7 + 20
-        : screen / 7 + 20;
+    screen >= 1700 
+    ? screen / 7 + 30 
+    : screen <= 1400 
+    ? screen / 7 + 20 
+    : screen / 7 + 25;
     return `${topValue}px`;
   }};
-  opacity: ${({ tam, screen }) => (tam > 30 || screen < 1050  ? '0' : '1')};
+  opacity: ${({ tam, screen }) => (tam > 30 || screen < 1050 || screen >= 2000 ? '0' : '1')};
   ${({ screen }) => {
     if (screen > 1300) {
       return css`
@@ -263,7 +261,7 @@ const Poiter3 = styled.img<{ tam: number; screen: number }>`
 
 const Principal = styled.img<{ tam: number }>`
   overflow: hidden;
-  display: ${({ tam }) => (tam >= 4 || tam >= 5 ? 'none' : 'block')};
+  display: ${({ tam }) => (tam >= 3 || tam >= 5 ? 'none' : 'block')};
   opacity: ${({ tam }) => (tam >= 4 || tam >= 5 ? '0' : '1')};
   transform: scale(${({ tam }) => 1 + tam});
   transition: 0.8s;
@@ -276,8 +274,8 @@ const Principal = styled.img<{ tam: number }>`
 export function TelaInicial({ valorScroll }: { valorScroll: number }) {
   const [ligarLuz, setLigarLuz] = useState(0);
   const [paralax, setParalax] = useState(0);
+  const [background, setBaground] = useState(telafixa)
   const [screen, setScreen] = useState(window.innerWidth);
-  const [background, setBaground] = useState('')
 
   useEffect(() => {
     const handleResize = () => {
@@ -289,6 +287,7 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
     };
   }, []);
 
+  
   const [text] = useTypewriter({
     words: ['Sistema Iniciado', 'Luciano Martinello'],
     loop: 1,
@@ -325,12 +324,14 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
   }
   
   useEffect(()=>{
-    if(screen >= 1050){
-      setBaground(principal)
-    }else if(screen <= 500){
-      setBaground(mobile)
-    }else if(screen >= 2000){
+   if(screen >= 2000){
       setBaground(telafixa)
+    }
+    else if(screen >= 1050){
+      setBaground(principal)
+    } 
+    else if(screen <= 500){
+      setBaground(mobile)
     }
     else{
       setBaground(telafixa)
@@ -340,6 +341,8 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
   },[screen])
 
 
+
+console.log(screen)
 
   window.addEventListener('mousemove', parallax);
   return (

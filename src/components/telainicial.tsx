@@ -81,12 +81,13 @@ const ContainerIntro = styled.div<{ tam: number, text: string, screen:number }>`
   }
   @media (max-width:850px) {
     img{
-        max-width: 80px;
+        max-width: 100px;
       }
       span{
         font-size: 1.2rem;
       }
-      @media (max-width:500px) {
+ @media (max-width:500px) {
+ 
         top: ${({screen})=>   screen / 2 +'px' } ;
         flex-direction: column;
     

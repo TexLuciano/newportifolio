@@ -33,15 +33,16 @@ const Container = styled.section<{ tam: number }>`
 
 const ContainerIntro = styled.div<{ tam: number, text: string, screen:number }>`
   top: ${({screen})=>   screen / 7 +'px' } ;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   transform: scale(${({ tam }) => 1 + tam / 2});
   position: absolute;
   transition: 0.5s;
   place-items: center;
   place-content: center;
-  grid-template-columns:350px minmax(400px, 700px);
   z-index: 5;
-  display: ${({ tam }) => (tam > 30 ? 'none' : 'grid')};
+  display: ${({ tam }) => (tam > 30 ? 'none' : 'flex')};
   img {
     display: block;
     max-width:350px;
@@ -53,7 +54,6 @@ const ContainerIntro = styled.div<{ tam: number, text: string, screen:number }>`
     place-items: center;
   }
   @media (max-width: 1600px) {
-    grid-template-columns:200px minmax(200px, 600px);
       img{
         max-width: 220px;
       }
@@ -62,7 +62,7 @@ const ContainerIntro = styled.div<{ tam: number, text: string, screen:number }>`
       }
   }
   @media (max-width: 1400px) {
-    grid-template-columns:200px minmax(200px, 480px);
+   
       img{
         max-width: 200px;
       }
@@ -70,6 +70,29 @@ const ContainerIntro = styled.div<{ tam: number, text: string, screen:number }>`
         font-size: 2.3rem;
       }
   }
+  @media (max-width: 1040px) {
+    
+      img{
+        max-width: 150px;
+      }
+      span{
+        font-size: 2rem;
+      }
+  }
+  @media (max-width:850px) {
+    img{
+        max-width: 80px;
+      }
+      span{
+        font-size: 1.2rem;
+      }
+      @media (max-width:500px) {
+        top: ${({screen})=>   screen / 2 +'px' } ;
+        flex-direction: column;
+    
+    }
+
+}
 `;
 
 const Palavra = styled.span<{ text: string; length: number }>`
@@ -86,7 +109,6 @@ const Palavra = styled.span<{ text: string; length: number }>`
   animation: blinkCursor 0.5s infinite;
   transition: 1s;
 `;
-
 
 const Lamp = styled.div<{ ligar: number; tam: number; screen: number }>`
   left: ${({ screen }) => {
@@ -239,9 +261,9 @@ const Poiter3 = styled.img<{ tam: number; screen: number }>`
   position: absolute;
 `;
 
-const Fot = styled.img<{ tam: number }>`
+const Principal = styled.img<{ tam: number }>`
   overflow: hidden;
-  display: ${({ tam }) => (tam >= 2 || tam >= 5 ? 'none' : 'block')};
+  display: ${({ tam }) => (tam >= 4 || tam >= 5 ? 'none' : 'block')};
   opacity: ${({ tam }) => (tam >= 4 || tam >= 5 ? '0' : '1')};
   transform: scale(${({ tam }) => 1 + tam});
   transition: 0.8s;
@@ -303,11 +325,11 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
   }
   
   useEffect(()=>{
-    if(screen > 1050){
+    if(screen >= 1050){
       setBaground(principal)
-    }else if(screen < 500){
+    }else if(screen <= 500){
       setBaground(mobile)
-    }else if(screen > 2000){
+    }else if(screen >= 2000){
       setBaground(telafixa)
     }
     else{
@@ -323,7 +345,7 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
   return (
     <>
       <Container tam={valorScroll} className="teste1">
-      <Fot
+      <Principal
           onMouseMove={ligar}
           className="computer"
           src={background}

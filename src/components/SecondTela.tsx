@@ -66,7 +66,7 @@ const SecondTela: React.FC<Props> = ({ valorScroll }) => {
 console.log(valorScroll)
   return (
     <>
-      <Img tam={valorScroll} src={tex} />
+      <Img tam={valorScroll} src={tex} alt="peixe" />
       <Container tam={valorScroll}>
         <Title tam={valorScroll} offset={200}>
           Teste zoom 1

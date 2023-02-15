@@ -9,6 +9,7 @@ import ponteiro1 from '../img/ponteiro1.svg';
 import ponteiro2 from '../img/ponteiro2.svg';
 import ponteiro3 from '../img/ponteiro3.svg';
 import Intro from './Intro';
+import { calculateTop, calculateDirection, calculateTopLamp } from './Utils';
 
 const Container = styled.section<{ tam: number }>`
   margin: 0 auto;
@@ -28,54 +29,21 @@ const Container = styled.section<{ tam: number }>`
     rgba(27, 39, 54, 1) 80%,
     rgba(23, 2, 2, 1) 100%
   );
-
 `;
 
-
-const Lamp = styled.div<{ ligar: number; tam: number; screen: number }>`
-  left: ${({ screen }) => {
-    const leftValue =
-      screen >= 1500
-        ? screen / 30
-        : screen >= 1400
-        ? screen / 30
-        : screen >= 1200
-        ? screen / 28
-        : screen >= 1100
-        ? screen / 30
-        : screen / 28;
-    return `${leftValue}px`;
-  }};
-  top: ${({ screen }) => {
-    const topValue =
-      screen >= 1700
-        ? screen / 7 + 30
-        : screen <= 1400
-        ? screen / 7 + 20
-        : screen / 7 + 25;
-    return `${topValue}px`;
-  }};
+const Lamp = styled.div<{
+  ligar: number;
+  tam: number;
+  screen: number;
+  left: number;
+  topValue: number;
+}>`
+  left: ${({ left }) => `${left}px`};
+  top: ${({ topValue }) => `${topValue}px`};
   opacity: ${({ tam, screen }) =>
     tam > 30 || screen < 1050 || screen >= 2000 ? '0' : '1'};
-  ${({ screen }) => {
-    if (screen > 1300) {
-      return css`
-        width: 60px;
-        height: 40px;
-      `;
-    } else if (screen > 1200) {
-      return css`
-        width: 40px;
-        height: 30px;
-      `;
-    } else {
-      return css`
-        width: 40px;
-        height: 25px;
-      `;
-    }
-  }}
-
+  width: 70px;
+  height: 45px;
   transition: 0.5s;
   border-right: 8px solid ${({ ligar }) => (ligar ? '#f4efd1' : 'black')};
   border-bottom: 4px solid;
@@ -83,6 +51,18 @@ const Lamp = styled.div<{ ligar: number; tam: number; screen: number }>`
   overflow: hidden;
   display: ${({ tam }) => (tam > 30 ? 'none' : 'block')};
   z-index: 2;
+  @media (max-width: 1568px) {
+    width: 60px;
+    height: 40px;
+  }
+  @media (max-width: 1400px) {
+    width: 55px;
+    height: 35px;
+  }
+  @media (max-width: 1262px) {
+    width: 45px;
+    height: 30px;
+  }
   ${({ ligar }) =>
     ligar &&
     css`
@@ -93,33 +73,16 @@ const Lamp = styled.div<{ ligar: number; tam: number; screen: number }>`
     `}
 `;
 
-const Poiter = styled.img<{ tam: number; screen: number }>`
+const Poiter = styled.img<{
+  tam: number;
+  screen: number;
+  topValue: number;
+  left: number;
+}>`
   overflow: hidden;
-  left: ${({ screen }) => {
-    const leftValue =
-      screen >= 1500
-        ? screen / 30
-        : screen >= 1400
-        ? screen / 48
-        : screen >= 1200
-        ? screen / 50
-        : screen >= 1100
-        ? screen / 38
-        : screen / 40;
-    return `${leftValue}px`;
-  }};
+  left: ${({ left }) => `${left}px`};
   max-width: ${({ screen }) => (screen >= 1200 ? '140px' : '100px')};
-  top: ${({ screen }) => {
-    const topValue =
-      screen >= 1600
-        ? screen / 3 + 90
-        : screen >= 1500
-        ? screen / 3 + 70
-        : screen >= 1400
-        ? screen / 3 + 50
-        : screen / 3 + 50;
-    return `${topValue}px`;
-  }};
+  top: ${({ topValue }) => `${topValue}px`};
   position: absolute;
   transition: 0.5s;
   display: ${({ tam, screen }) =>
@@ -127,34 +90,16 @@ const Poiter = styled.img<{ tam: number; screen: number }>`
   z-index: 2;
   animation: girar1 infinite 10s;
 `;
-const Poiter2 = styled.img<{ tam: number; screen: number }>`
+const Poiter2 = styled.img<{
+  tam: number;
+  screen: number;
+  topValue: number;
+  rigth: number;
+}>`
   overflow: hidden;
-  right: ${({ screen }) => {
-    const leftValue =
-      screen >= 1500
-        ? screen / 38
-        : screen >= 1400
-        ? screen / 48
-        : screen >= 1200
-        ? screen / 50
-        : screen >= 1100
-        ? screen / 55
-        : screen / 60;
-    return `${leftValue}px`;
-  }};
+  right: ${({ rigth }) => `${rigth}px`};
   max-width: ${({ screen }) => (screen >= 1300 ? '130px' : '100px')};
-
-  top: ${({ screen }) => {
-    const topValue =
-      screen >= 1600
-        ? screen / 3 + 35
-        : screen >= 1500
-        ? screen / 3 + 20
-        : screen >= 1400
-        ? screen / 3 + 10
-        : screen / 3 + 20;
-    return `${topValue}px`;
-  }};
+  top: ${({ topValue }) => `${topValue}px`};
   transition: 0.5s;
   display: ${({ tam, screen }) =>
     tam > 30 || screen < 1050 || screen >= 2000 ? 'none' : 'block'};
@@ -162,21 +107,11 @@ const Poiter2 = styled.img<{ tam: number; screen: number }>`
   animation: girar1 infinite 10s;
   position: absolute;
 `;
-const Poiter3 = styled.img<{ tam: number; screen: number }>`
+const Poiter3 = styled.img<{ tam: number; screen: number; topValue: number }>`
   overflow: hidden;
   left: ${({ screen }) => screen / 3 + 'px'};
   max-width: ${({ screen }) => (screen >= 1300 ? '25px' : '15px')};
-  top: ${({ screen }) => {
-    const topValue =
-      screen >= 1600
-        ? screen / 3 + 170
-        : screen >= 1500
-        ? screen / 3 + 135
-        : screen >= 1400
-        ? screen / 3 + 130
-        : screen / 3 + 120;
-    return `${topValue}px`;
-  }};
+  top: ${({ topValue }) => `${topValue}px`};
   transition: 0.5s;
   display: ${({ tam, screen }) =>
     tam > 30 || screen < 1050 || screen >= 2000 ? 'none' : 'block'};
@@ -201,6 +136,7 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
   const [paralax, setParalax] = useState(0);
   const [background, setBaground] = useState(telafixa);
   const [screen, setScreen] = useState(window.innerWidth);
+  console.log(calculateTop);
 
   useEffect(() => {
     const handleResize = () => {
@@ -211,7 +147,6 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
 
   function parallax(e: MouseEventInit) {
     if (e instanceof PointerEvent) {
@@ -254,9 +189,10 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
           tam={valorScroll / 50}
           alt=""
         />
-
-       <Intro screen={screen} tam={valorScroll}/>
+        <Intro screen={screen} tam={valorScroll} />
         <Lamp
+          left={calculateDirection(screen, 30, 30, 30, 30, 30)}
+          topValue={calculateTopLamp(screen, 32, 25, 22, 20, 16)}
           tam={valorScroll}
           ligar={ligarLuz}
           screen={screen}
@@ -268,15 +204,24 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
           tam={valorScroll}
           screen={screen}
           src={ponteiro1}
+          left={calculateDirection(screen, 30, 48, 50, 38, 40)}
+          topValue={calculateTop(screen, 90, 70, 50, 48)}
         />
 
         <Poiter2
           className="teste"
           tam={valorScroll}
           screen={screen}
+          rigth={calculateDirection(screen, 38, 48, 50, 55, 60)}
+          topValue={calculateTop(screen, 35, 20, 10, 12)}
           src={ponteiro2}
         />
-        <Poiter3 tam={valorScroll} screen={screen} src={ponteiro3} />
+        <Poiter3
+          tam={valorScroll}
+          screen={screen}
+          topValue={calculateTop(screen, 170, 135, 130, 115)}
+          src={ponteiro3}
+        />
       </Container>
     </>
   );

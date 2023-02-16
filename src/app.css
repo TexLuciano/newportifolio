@@ -3,3 +3,16 @@ body,div,html,h1,h2,h3,p,ul,li{
   padding: 0px;
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+  background: black;
+  width: 12px;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f7f7f7;    
+  border-radius: 20px;      
+  border: 3px solid  rgba(27, 39, 54, 1);  
+ 
+}

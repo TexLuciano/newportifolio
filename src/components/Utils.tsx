@@ -40,3 +40,19 @@ export const calculateTopLamp = (screen: number, val1:number, val2:number, val3:
   }
 } 
   
+export const display=( tam:number, screen:number)=>{
+  if(tam > 30 || screen < 1050 || screen >= 2000){
+      return 'none'
+  }else{
+    return 'block'
+  }
+}
+
+
+// const [paralax, setParalax] = useState(0);
+// function parallax(e: MouseEventInit) {
+//   if (e instanceof PointerEvent) {
+//     setParalax(e.clientX + e.clientY - 100);
+//   }
+// }
+// window.addEventListener('mousemove', parallax);

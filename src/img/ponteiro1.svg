@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW 2020 (64 Bit) -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="450px" height="450px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 450 450"
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="400px" height="400px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 400 400"
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
  <defs>
@@ -15,11 +15,11 @@ viewBox="0 0 450 450"
  </defs>
  <g id="Camada_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_2491464196496">
-   <circle class="fil0" transform="matrix(2.46966 -2.55678 2.55678 2.46966 223.642 224.858)" r="59.7"/>
+  <g id="_2325688194720">
+   <circle class="fil0" transform="matrix(0.72552 -0.751114 0.751114 0.72552 202.244 199.04)" r="186.56"/>
    <g>
-    <path class="fil1" d="M242.52 306.17l-39.71 -0.52 4.62 -58.21c2.65,1.83 5.68,3.23 9,4.06 7.79,1.95 15.64,0.36 21.85,-3.75l4.24 58.42zm-31.33 -106.19l12.35 -155.69 11.27 155.61c-1.59,-0.75 -3.28,-1.36 -5.06,-1.8 -6.47,-1.62 -12.98,-0.8 -18.56,1.88z"/>
-    <path class="fil1" d="M197.01 199.13c14.21,-14.71 37.65,-15.11 52.36,-0.9 14.71,14.21 15.11,37.64 0.9,52.35 -14.21,14.72 -37.64,15.12 -52.35,0.91 -14.72,-14.21 -15.12,-37.65 -0.91,-52.36zm39 42.76c-9.4,6.83 -22.56,4.74 -29.39,-4.66 -6.84,-9.41 -4.75,-22.57 4.66,-29.4 9.4,-6.83 22.56,-4.75 29.39,4.66 6.83,9.4 4.75,22.57 -4.66,29.4z"/>
+    <path class="fil1" d="M216.59 259.43l-28.69 -0.37 3.34 -42.06c1.91,1.32 4.1,2.33 6.5,2.93 5.63,1.41 11.3,0.26 15.78,-2.7l3.07 42.2zm-22.64 -76.72l8.92 -112.48 8.15 112.43c-1.15,-0.55 -2.37,-0.99 -3.66,-1.3 -4.67,-1.18 -9.38,-0.58 -13.41,1.35l0 0z"/>
+    <path class="fil1" d="M183 180.45c10.27,-10.63 27.2,-10.92 37.83,-0.65 10.63,10.27 10.92,27.19 0.65,37.82 -10.26,10.64 -27.19,10.92 -37.82,0.66 -10.63,-10.27 -10.92,-27.2 -0.66,-37.83zm28.18 30.89c-6.79,4.94 -16.3,3.43 -21.23,-3.36 -4.95,-6.8 -3.43,-16.31 3.36,-21.24 6.8,-4.94 16.3,-3.43 21.24,3.36 4.93,6.79 3.43,16.31 -3.37,21.24z"/>
    </g>
   </g>
  </g>

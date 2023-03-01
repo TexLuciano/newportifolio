@@ -163,22 +163,22 @@ const ContainerIntro = styled.div<{
   @media (max-width: 800px) {
     max-width: 600px;
     max-height: 170px;
-    top: ${({ screen }) => screen / 4 + 'px'};
+  
   }
 
-  @media (max-width: 700px) {
-    top: ${({ screen }) => screen /2 + 'px'};
-    flex-direction: column;
-    max-width: 500px;
-    max-height: 200px;
+  @media (max-width: 720px) {
+    top: ${({ screen }) => screen /4 + 'px'};
+    max-width: 400px;
+    max-height: 100px;
  
    
   }
-  @media (max-width: 550px) {
+  @media (max-width: 560px) {
+    top: ${({ screen }) => screen /2 + 'px'};
+    flex-direction: column;
     max-width: 200px;
     max-height: 150px;
  
-   
   }
 `;
 

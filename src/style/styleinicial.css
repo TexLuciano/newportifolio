@@ -172,7 +172,7 @@ body{
 
 
 }
-@media (max-width: 800px) {
+@media (max-width: 720px) {
   .container-clock .clock1 {
     width: 70px;
   height: 70px;

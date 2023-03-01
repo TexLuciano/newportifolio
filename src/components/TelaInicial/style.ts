@@ -48,13 +48,13 @@ export const Container = styled.section<{ tam: number }>`
 export const ContainerLamp = styled.div<{
   tam: number;
   ligar: number;
+  
 }>`
   position: absolute;
   background: url(${test1}) no-repeat center;
   content: '';
   left: 50px;
   top: 30%;
-  //top: 60%;
   width: 300px;
   height: 500px;
   background-size: 220px;
@@ -262,7 +262,7 @@ export const Clock3 = styled.div<{
   height: 400px;
   background-size: 100%;
   z-index: 200;
-  transform: translateX(${({ tam }) => -(0 + tam * 2) + 'px'});
+  transform: translateY(${({ tam }) => (0 + tam * 4) + 'px'});
   transition: 0.3s;
 
   img {

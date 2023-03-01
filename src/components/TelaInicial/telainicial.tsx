@@ -60,6 +60,7 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
             tam={valorScroll / 50}
             alt=""
           />
+
           <C.ContainerLamp
             tam={valorScroll}
             ligar={ligarLuz}
@@ -77,8 +78,11 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
           </C.Clock3>
        
         </C.Div>
-        <Intro screen={screen}  tam={valorScroll} />
+
+       
+
       </C.Container>
+      <Intro screen={screen}  tam={valorScroll} />
     </>
   );
 }

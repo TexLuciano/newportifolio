@@ -26,6 +26,8 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
     };
   }, []);
 
+
+  
   function ligar() {
     setLigarLuz(1);
 
@@ -39,7 +41,7 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
 
 
   useEffect(() => {
-    if (screen < 750) {
+    if (screen < 800) {
       setBaground(mobile);
     } else {
       setBaground(principal);

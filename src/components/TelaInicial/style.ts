@@ -149,26 +149,11 @@ export const ContainerLamp = styled.div<{
       height: 40px;
     }
   }
-  @media (max-width: 700px) {
-    left: 0px;
-    background-size: 60px;
-    div {
-      width: 25px;
-      height: 40px;
-      border-top: 4px solid ${({ ligar }) => (ligar ? '#f4efd1' : 'black')};
-      border-left: 2px solid;
-      border-right: 2px solid;
-      ${({ ligar }) =>
-        ligar &&
-        css`
-          border-top: 4px solid #f4efd1;
-          border-right: 4px solid #f4efd1;
-          border-left: 4px solid #f4efd1;
-          box-shadow: 0 0 5px #f4efd1, 0 0 30px #f4efd1, 0 0 40px #f4efd1,
-            0 0 80px #f4efd1;
-        `}
-    }
-    @media (max-width: 550px) {
+  @media (max-width: 800px) {
+    display:none;
+  }
+  @media (max-width: 550px) {
+    display:grid;
       width: 70px;
       left: 300px;
       top: 60%;
@@ -176,12 +161,24 @@ export const ContainerLamp = styled.div<{
       div {
         width: 25px;
         height: 40px;
+        border-top: 4px solid ${({ ligar }) => (ligar ? '#f4efd1' : 'black')};
+        border-left: 2px solid;
+        border-right: 2px solid;
+        ${({ ligar }) =>
+          ligar &&
+          css`
+            border-top: 4px solid #f4efd1;
+            border-right: 4px solid #f4efd1;
+            border-left: 4px solid #f4efd1;
+            box-shadow: 0 0 5px #f4efd1, 0 0 30px #f4efd1, 0 0 40px #f4efd1,
+              0 0 80px #f4efd1;
+          `}
       }
     }
-  }
+  
 `;
 
-export const Principal = styled.img<{ tam: number ; screen:number;}>`
+export const Principal = styled.img<{ tam: number; screen: number }>`
   overflow: hidden;
   display: ${({ tam }) => (tam >= 3 || tam >= 5 ? 'none' : 'block')};
   opacity: ${({ tam }) => (tam >= 4 || tam >= 5 ? '0' : '1')};
@@ -190,13 +187,10 @@ export const Principal = styled.img<{ tam: number ; screen:number;}>`
   width: 100%;
   object-fit: cover;
 
-
   @media (max-width: 550px) {
-    display: ${({ screen }) => (screen > 700  ? 'none' : 'block')};
-  opacity:  ${({ screen }) => (screen > 700  ? '0' : '1')};
-
+    display: ${({ screen }) => (screen > 700 ? 'none' : 'block')};
+    opacity: ${({ tam }) => (tam >= 4 || tam >= 5 ? '0' : '1')};
   }
-
 `;
 
 export const Div = styled.div`

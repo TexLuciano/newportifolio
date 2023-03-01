@@ -19,7 +19,7 @@ const ContainerIntro = styled.div<{
   place-items: center;
   place-content: center;
   z-index: 5;
-  display: ${({ tam }) => (tam > 50 ? 'none' : 'flex')};
+  display: ${({ tam }) => (tam > 20 ? 'none' : 'flex')};
   width: 100%;
   height: 100%;
   max-width: 1800px;

@@ -46,8 +46,8 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
 
   return (
     <>
-      <C.Container tam={valorScroll} className="teste1">
-        <C.Div className='testttt'>
+      <C.Container tam={valorScroll} >
+        <C.Div className='container-clock'>
           <C.Principal
             onMouseMove={ligar}
             className="computer"
@@ -56,7 +56,6 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
             alt=""
           />
           <C.ContainerLamp
-            className="testee"
             tam={valorScroll}
             ligar={ligarLuz}
           >

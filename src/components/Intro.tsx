@@ -77,6 +77,38 @@ const ContainerIntro = styled.div<{
       font-size: 2rem;
     }
   }
+  @media (max-width: 1000px) {
+    width: 430px;
+    height: 150px;
+    span{
+      font-size: 1.3rem;
+    }
+  }
+  @media (max-width: 650px) {
+    width: 350px;
+    height: 100px;
+    span{
+      font-size: 1.3rem;
+    }
+  }
+  @media (max-width: 550px) {
+    flex-direction: column;
+    width: 350px;
+    height: 250px;
+    top: ${({ screen }) => screen /2 + 'px'};
+    span{
+      font-size: 1.7rem;
+    }
+  }
+  @media (max-width: 470px) {
+    flex-direction: column;
+    width: 300px;
+    height: 180px;
+    top: ${({ screen }) => screen /2 + 'px'};
+    span{
+      font-size: 1.3rem;
+    }
+  }
 `;
 
 const Palavra = styled.span<{ text: string; length: number }>`

@@ -2,12 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import '../app.css';
 import SecondTela from '../components/SecondTela';
-import { TelaInicial } from '../components/telainicial';
+import { TelaInicial } from '../components/TelaInicial/telainicial';
 import '../style/styleinicial.css';
 
-const Container = styled.div`
-  
-`;
+const Container = styled.div``;
 
 function Home() {
   const [valorScroll, setValorScroll] = useState(0);

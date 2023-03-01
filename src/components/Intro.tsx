@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import '../app.css';
 import '../style/styleinicial.css';
 import styled from 'styled-components';
@@ -12,7 +12,6 @@ const ContainerIntro = styled.div<{
 }>`
   top: ${({ screen }) => screen / 7 + 'px'};
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
   transform: scale(${({ tam }) => 1 + tam / 2});
   position: absolute;
@@ -20,51 +19,94 @@ const ContainerIntro = styled.div<{
   place-items: center;
   place-content: center;
   z-index: 5;
-  display: ${({ tam }) => (tam > 30 ? 'none' : 'flex')};
+  display: ${({ tam }) => (tam > 50 ? 'none' : 'flex')};
+  width: 100%;
+  height: 100%;
+  max-width: 1800px;
+  max-height: 800px;
   img {
     display: block;
-    max-width: 350px;
+    max-width: 100%;
+    max-height: 100%;
     transition: 1s;
     transform: scale(${({ text }) => (text.length >= 18 ? 1 : 0)});
   }
-  div {
-    display: grid;
-    place-items: center;
+
+  @media (max-width: 2520px) {
+    width: 1500px;
+    height: 500px;
+    //top: ${({ screen }) => screen / 2 + 'px'};
+    //flex-direction: column;
   }
-  @media (max-width: 1600px) {
-    img {
-      max-width: 220px;
-    }
-    span {
-      font-size: 2.7rem;
-    }
-  }
-  @media (max-width: 1400px) {
-    img {
-      max-width: 200px;
-    }
-    span {
-      font-size: 2.3rem;
+  
+  @media (max-width: 2225px) {
+    width: 1200px;
+    height: 350px;
+    //top: ${({ screen }) => screen / 2 + 'px'};
+    //flex-direction: column;
+    span{
+      font-size: 4rem;
     }
   }
-  @media (max-width: 1040px) {
-    img {
-      max-width: 150px;
+  @media (max-width: 1900px) {
+    width: 1100px;
+    height: 350px;
+    span{
+      font-size: 3.5rem;
     }
-    span {
+  }
+
+  @media (max-width: 1665px) {
+    width: 1000px;
+    height: 300px;
+    span{
+      font-size: 3rem;
+    }
+  }
+  @media (max-width: 1425px) {
+    width: 800px;
+    height: 250px;
+    span{
+      font-size: 2.5rem;
+    }
+  }
+  @media (max-width: 1175px) {
+    width: 600px;
+    height: 200px;
+    span{
       font-size: 2rem;
     }
   }
-  @media (max-width: 850px) {
-    img {
-      max-width: 100px;
+  @media (max-width: 1000px) {
+    width: 430px;
+    height: 150px;
+    span{
+      font-size: 1.3rem;
     }
-    span {
-      font-size: 1.2rem;
+  }
+  @media (max-width: 650px) {
+    width: 350px;
+    height: 100px;
+    span{
+      font-size: 1.3rem;
     }
-    @media (max-width: 520px) {
-      top: ${({ screen }) => screen / 2 + 'px'};
-      flex-direction: column;
+  }
+  @media (max-width: 550px) {
+    flex-direction: column;
+    width: 350px;
+    height: 250px;
+    top: ${({ screen }) => screen /2 + 'px'};
+    span{
+      font-size: 1.7rem;
+    }
+  }
+  @media (max-width: 470px) {
+    flex-direction: column;
+    width: 300px;
+    height: 180px;
+    top: ${({ screen }) => screen /2 + 'px'};
+    span{
+      font-size: 1.3rem;
     }
   }
 `;
@@ -74,23 +116,29 @@ const Palavra = styled.span<{ text: string; length: number }>`
     text.length >= length ? 'none' : '2px solid #fff'};
   color: #fff;
   font-family: 'Silkscreen', cursive;
-  font-size: 3rem;
-  white-space: nowrap;
+  font-size: 5rem;
   overflow: hidden;
   display: block;
+  white-space: nowrap;
   align-self: center;
   justify-self: center;
   animation: blinkCursor 0.5s infinite;
   transition: 1s;
+
+
+
+`;
+const Int = styled.div`
+  display: grid;
+  place-content: center;
 `;
 
-interface Props{
-screen:number
-tam:number
+interface Props {
+  screen: number;
+  tam: number;
 }
 
-const Intro = ({screen, tam}:Props) => {
-
+const Intro = ({ screen, tam }: Props) => {
   const [text] = useTypewriter({
     words: ['Sistema Iniciado', 'Luciano Martinello'],
     loop: 1,
@@ -111,27 +159,27 @@ const Intro = ({screen, tam}:Props) => {
   });
 
   return (
-   <>
-   <ContainerIntro tam={tam} screen={screen} text={text}>
-          <img src={texfoto} alt="foto perfil" />
+    <>
+      <ContainerIntro tam={tam} screen={screen} text={text}>
+        <img src={texfoto} alt="foto perfil" />
 
-          <div>
-            <Palavra text={text} length={18} className="title-inicial">
-              {text}{' '}
-            </Palavra>
-            <Palavra text={text2} length={13} className="title-inicial">
-              {text2}
-            </Palavra>
-            <Palavra text={text3} length={11} className="title-inicial">
-              {text3}
-            </Palavra>
-            <Palavra text={text4} length={14} className="title-inicial">
-              {text4}
-            </Palavra>
-          </div>
-        </ContainerIntro>
-   </>
-  )
-}
+        <Int>
+          <Palavra text={text} length={18} className="title-inicial">
+            {text}{' '}
+          </Palavra>
+          <Palavra text={text2} length={13} className="title-inicial">
+            {text2}
+          </Palavra>
+          <Palavra text={text3} length={11} className="title-inicial">
+            {text3}
+          </Palavra>
+          <Palavra text={text4} length={14} className="title-inicial">
+            {text4}
+          </Palavra>
+        </Int>
+      </ContainerIntro>
+    </>
+  );
+};
 
-export default Intro
+export default Intro;

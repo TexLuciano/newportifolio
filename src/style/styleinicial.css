@@ -58,35 +58,215 @@ html, body, div, h1,h2 ,p, ul , li, section{
   
 }
 
-@keyframes tremedor {
+@keyframes leftRight {
   0%{
-    transform: translateX(-20px);
+    transform: translateX(-5px);
   }
   50%{
-    transform: translateX(40px);
+    transform: translateX(80px);
   }
   100%{
-    transform: translateX(-20px);
+    transform: translateX(-5px);
   }
 }
 
 .lampada{
   content: '';
   display: block;
- 
-  border-radius: 80% 30% 30% 80%;
-  border-right: 8px solid black;
-  border-bottom: 4px solid black;
-  border-top:  4px solid black;
+  border-radius: 50% 50% 80% 80%;
   transition: 0.5s;
   transition-property: box-shadow;
   background: transparent;
-  position: absolute;
   z-index: 1;
   
 }
 
 
  
+
+@media (max-width: 2980px) {
+  .testttt .clock1 {
+    width: 300px;
+    height: 300px;
+  }
+  .testttt .clock1 img{
+    max-width: 270px;
+  }
+
+  .testttt .clock2 {
+    right: -150px;
+    width: 600px;
+    height: 600px;
+  }
+  .testttt .clock3{
+     width: 500px;
+  }
+
+}
+@media (max-width: 2250px) {
+  .testttt .clock1 {
+    width: 250px;
+    height: 250px;
+  }
+  .testttt .clock1 img{
+    max-width: 220px;
+  }
+  .testttt .clock2 {
+    right: -50px;
+    width: 400px;
+    height: 400px;
+  }
+  .testttt .clock2 img{
+    max-width: 150px;
+  }
+  .testttt .clock3{
+  width: 400px;
+  left: 400px;
+  }
+  .testttt .clock3 img {
+    margin-top: 10px;
+    max-width: 80px;
+  }
+
+}
+@media (max-width: 1950px) {
+  .testttt .clock1 {
+    width: 160px;
+    height: 160px;
+  }
+ 
+  .testttt .clock1 img{
+    max-width: 150px;
+  }
+
+  .testttt .clock2 {
+    top: 50%;
+    right: -65px;
+    width: 350px;
+    height: 350px;
+ 
+  }
+  .testttt .clock2 img{
+    max-width: 100px;
+  }
+
+  .testttt .clock3{
+    top: 63%;
+    width: 300px;
+    height: 160px;
+  
+    }
+.testttt .clock3  img {
+  margin-top: 20px;
+  max-width: 50px;
+}
+
+}
+@media (max-width: 1290px) {
+  .testttt .clock1 {
+    width: 120px;
+    height: 120px;
+    left: 25px;
+  }
+ 
+  .testttt .clock1 img {
+    max-width: 100px;
+  }
+
+
+  .testttt .clock2 {
+    width: 270px;
+    height: 270px;
+
+  }
+  .testttt .clock2 img{
+    max-width: 80px;
+  }
+  .testttt .clock3{
+    width: 200px;
+    left: 200px;
+  
+    }
+ .testttt .clock3 img {
+   max-width: 35px;
+  }
+
+
+}
+@media (max-width: 1030px) {
+  .testttt .clock1 {
+    width: 90px;
+    height: 90px;
+    left: 15px;
+  }
+ 
+  .testttt .clock1  img {
+    max-width: 80px;
+  }
+
+  .testttt .clock2 {
+    right: -40px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .testttt .clock3{
+    width: 150px;
+
+  
+    }
+    .testttt .clock3 img {
+      max-width: 25px;
+    }
+
+
+
+}
+@media (max-width: 700px) {
+  .testttt .clock1 {
+    width: 70px;
+  height: 70px;
+  left: 3px;
+  top: 3px;
+  }
+
+  .testttt .clock1  img {
+    max-width: 65px;
+  }
+
+  .testttt .clock2 {
+    right: -40px;
+    width: 130px;
+    height: 130px;
+  }
+  .testttt .clock2 img{
+    margin-top: 10px;
+    max-width: 40px;
+  }
+
+  .testttt .clock3{
+    left: 100px;
+    width: 120px;
+ 
+    }
+    .testttt .clock3 img {
+      max-width: 20px;
+    }
+
+}
+@media (max-width: 550px) {
+  .testttt .clock2{
+  right: -40px;
+  width: 130px;
+  height: 130px;
+  top: -20px;
+  }
+  .testttt .clock2 img {
+    margin-top: 10px;
+    max-width: 40px;
+  }
+
+}
+
 
 

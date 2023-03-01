@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import '../style/styleinicial.css';
 import tex from '../img/texugogif.gif';
-
+import { Teste } from './teste';
+import ponteiro1 from '../img/ponteiro1.svg';
+import relogio from '../img/relogio1.png';
 interface Props {
   valorScroll: number;
 }
@@ -61,9 +63,14 @@ const Img = styled.img<{ tam: number }>`
   }
 `;
 
+
+
+
+
+
 const SecondTela: React.FC<Props> = ({ valorScroll }) => {
  
-console.log(valorScroll)
+
   return (
     <>
       <Img tam={valorScroll} src={tex} alt="peixe" />
@@ -80,7 +87,9 @@ console.log(valorScroll)
       <Container tam={valorScroll}>
         <Title tam={valorScroll} offset={1400}>
           Teste zoom 3
+     
         </Title>
+    
       </Container>
     </>
   );

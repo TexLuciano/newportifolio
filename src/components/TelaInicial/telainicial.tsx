@@ -80,9 +80,9 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
         </C.Div>
 
        
-
+        <Intro screen={screen}  tam={valorScroll} />
       </C.Container>
-      <Intro screen={screen}  tam={valorScroll} />
+
     </>
   );
 }

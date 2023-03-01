@@ -22,6 +22,27 @@ export const Container = styled.section<{ tam: number }>`
     rgba(27, 39, 54, 1) 80%,
     rgba(23, 2, 2, 1) 100%
   );
+
+  @keyframes girar1 {
+    0% {
+      rotate: 60deg;
+    }
+    10% {
+      rotate: -60deg;
+    }
+    30% {
+      rotate: 10deg;
+    }
+    50% {
+      rotate: 60deg;
+    }
+    80% {
+      rotate: 20deg;
+    }
+    100% {
+      rotate: 60deg;
+    }
+  }
 `;
 
 export const ContainerLamp = styled.div<{
@@ -44,6 +65,13 @@ export const ContainerLamp = styled.div<{
   display: grid;
   place-content: center;
   div {
+    content: '';
+    display: block;
+    border-radius: 50% 50% 80% 80%;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    background: transparent;
+    z-index: 1;
     transition: 0.3s;
     max-width: 100%;
     width: 80px;
@@ -215,7 +243,7 @@ export const Clock2 = styled.div<{
     transition: 0.3s;
     display: block;
     max-width: 210px;
-    animation: girar2 5s infinite;
+    animation: girar1 5s infinite;
     margin-bottom: 20px;
   }
 `;

@@ -59,7 +59,7 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
             tam={valorScroll}
             ligar={ligarLuz}
           >
-            <div className="lampada teste"></div>
+            <div></div>
           </C.ContainerLamp>
           <C.Clock className='clock1' tam={valorScroll}>
             <img src={ponteiro1} />

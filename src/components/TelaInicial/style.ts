@@ -3,6 +3,7 @@ import test2 from '../../img/testpt.png';
 import test3 from '../../img/testpt2.png';
 import relogio from '../../img/relogio1.png';
 import styled, { css } from 'styled-components';
+import '../../style/styleinicial.css';
 
 export const Container = styled.section<{ tam: number }>`
   margin: 0 auto;
@@ -192,10 +193,7 @@ export const Clock = styled.div<{
     max-width: 350px;
     animation: girar1 10s infinite;
   }
-
- 
 `;
-
 
 export const Clock2 = styled.div<{
   tam: number;
@@ -220,7 +218,6 @@ export const Clock2 = styled.div<{
     animation: girar2 5s infinite;
     margin-bottom: 20px;
   }
-
 `;
 
 export const Clock3 = styled.div<{
@@ -245,8 +242,4 @@ export const Clock3 = styled.div<{
     max-width: 100px;
     animation: leftRight 3s infinite;
   }
-
-
 `;
-
-

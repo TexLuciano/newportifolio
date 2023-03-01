@@ -1,3 +1,5 @@
+
+
 html, body, div, h1,h2 ,p, ul , li, section{
   margin: 0px;
   padding: 0px;
@@ -231,7 +233,7 @@ html, body, div, h1,h2 ,p, ul , li, section{
   }
 
   .container-clock .clock1  img {
-    animation: girar1 10s infinite;
+
     max-width: 65px;
   }
 
@@ -241,7 +243,7 @@ html, body, div, h1,h2 ,p, ul , li, section{
     height: 130px;
   }
   .container-clock .clock2 img{
-    animation: girar1 10s infinite;
+   
     margin-top: 10px;
     max-width: 40px;
   }

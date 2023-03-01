@@ -5,6 +5,10 @@ html, body, div, h1,h2 ,p, ul , li, section{
   padding: 0px;
 }
 
+body{
+ overflow-x: hidden;
+}
+
 
 @keyframes blinkCursor {
   from {

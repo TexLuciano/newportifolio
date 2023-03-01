@@ -181,7 +181,7 @@ export const ContainerLamp = styled.div<{
   }
 `;
 
-export const Principal = styled.img<{ tam: number }>`
+export const Principal = styled.img<{ tam: number ; screen:number;}>`
   overflow: hidden;
   display: ${({ tam }) => (tam >= 3 || tam >= 5 ? 'none' : 'block')};
   opacity: ${({ tam }) => (tam >= 4 || tam >= 5 ? '0' : '1')};
@@ -189,6 +189,14 @@ export const Principal = styled.img<{ tam: number }>`
   transition: 0.3s;
   width: 100%;
   object-fit: cover;
+
+
+  @media (max-width: 550px) {
+    display: ${({ screen }) => (screen > 700  ? 'none' : 'block')};
+  opacity:  ${({ screen }) => (screen > 700  ? '0' : '1')};
+
+  }
+
 `;
 
 export const Div = styled.div`

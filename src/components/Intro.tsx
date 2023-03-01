@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import '../app.css';
 import '../style/styleinicial.css';
 import styled from 'styled-components';
@@ -9,6 +9,7 @@ const ContainerIntro = styled.div<{
   tam: number;
   text: string;
   screen: number;
+ 
 }>`
   top: ${({ screen }) => screen / 7 + 'px'};
   display: flex;
@@ -38,20 +39,20 @@ const ContainerIntro = styled.div<{
     //top: ${({ screen }) => screen / 2 + 'px'};
     //flex-direction: column;
   }
-  
+
   @media (max-width: 2225px) {
     width: 1200px;
     height: 350px;
     //top: ${({ screen }) => screen / 2 + 'px'};
     //flex-direction: column;
-    span{
+    span {
       font-size: 4rem;
     }
   }
   @media (max-width: 1900px) {
     width: 1100px;
     height: 350px;
-    span{
+    span {
       font-size: 3.5rem;
     }
   }
@@ -59,35 +60,35 @@ const ContainerIntro = styled.div<{
   @media (max-width: 1665px) {
     width: 1000px;
     height: 300px;
-    span{
+    span {
       font-size: 3rem;
     }
   }
   @media (max-width: 1425px) {
     width: 800px;
     height: 250px;
-    span{
+    span {
       font-size: 2.5rem;
     }
   }
   @media (max-width: 1175px) {
     width: 600px;
     height: 200px;
-    span{
+    span {
       font-size: 2rem;
     }
   }
   @media (max-width: 1000px) {
     width: 430px;
     height: 150px;
-    span{
+    span {
       font-size: 1.3rem;
     }
   }
   @media (max-width: 650px) {
     width: 350px;
     height: 100px;
-    span{
+    span {
       font-size: 1.3rem;
     }
   }
@@ -95,17 +96,19 @@ const ContainerIntro = styled.div<{
     flex-direction: column;
     width: 350px;
     height: 250px;
-    top: ${({ screen }) => screen /2 + 'px'};
-    span{
+    top: ${({ screen }) => screen / 2 + 'px'};
+    span {
       font-size: 1.7rem;
     }
+
+    
   }
   @media (max-width: 470px) {
     flex-direction: column;
     width: 300px;
     height: 180px;
-    top: ${({ screen }) => screen /2 + 'px'};
-    span{
+    top: ${({ screen }) => screen / 2 + 'px'};
+    span {
       font-size: 1.3rem;
     }
   }
@@ -124,9 +127,6 @@ const Palavra = styled.span<{ text: string; length: number }>`
   justify-self: center;
   animation: blinkCursor 0.5s infinite;
   transition: 1s;
-
-
-
 `;
 const Int = styled.div`
   display: grid;
@@ -139,6 +139,11 @@ interface Props {
 }
 
 const Intro = ({ screen, tam }: Props) => {
+
+
+
+
+
   const [text] = useTypewriter({
     words: ['Sistema Iniciado', 'Luciano Martinello'],
     loop: 1,
@@ -158,9 +163,11 @@ const Intro = ({ screen, tam }: Props) => {
     loop: 1,
   });
 
+
+
   return (
     <>
-      <ContainerIntro tam={tam} screen={screen} text={text}>
+      <ContainerIntro tam={tam} screen={screen} text={text}    >
         <img src={texfoto} alt="foto perfil" />
 
         <Int>

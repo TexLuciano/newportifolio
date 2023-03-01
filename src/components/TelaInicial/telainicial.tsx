@@ -35,9 +35,11 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
       }, 4000);
     }
   }
+  
+
 
   useEffect(() => {
-    if (screen < 550) {
+    if (screen < 750) {
       setBaground(mobile);
     } else {
       setBaground(principal);
@@ -49,6 +51,7 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
       <C.Container tam={valorScroll} >
         <C.Div className='container-clock'>
           <C.Principal
+            screen={screen}
             onMouseMove={ligar}
             className="computer"
             src={background}
@@ -72,7 +75,7 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
           </C.Clock3>
        
         </C.Div>
-        <Intro screen={screen} tam={valorScroll} />
+        <Intro screen={screen}  tam={valorScroll} />
       </C.Container>
     </>
   );

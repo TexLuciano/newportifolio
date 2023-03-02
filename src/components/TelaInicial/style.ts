@@ -48,7 +48,6 @@ export const Container = styled.section<{ tam: number }>`
 export const ContainerLamp = styled.div<{
   tam: number;
   ligar: number;
-  
 }>`
   position: absolute;
   background: url(${test1}) no-repeat center;
@@ -150,32 +149,32 @@ export const ContainerLamp = styled.div<{
     }
   }
   @media (max-width: 800px) {
-    display:none;
+    display: none;
   }
   @media (max-width: 550px) {
-    display:grid;
-      width: 70px;
-      left: 300px;
-      top: 60%;
-      background-size: 70px;
-      div {
-        width: 25px;
-        height: 40px;
-        border-top: 4px solid ${({ ligar }) => (ligar ? '#f4efd1' : 'black')};
-        border-left: 2px solid;
-        border-right: 2px solid;
-        ${({ ligar }) =>
-          ligar &&
-          css`
-            border-top: 4px solid #f4efd1;
-            border-right: 4px solid #f4efd1;
-            border-left: 4px solid #f4efd1;
-            box-shadow: 0 0 5px #f4efd1, 0 0 30px #f4efd1, 0 0 40px #f4efd1,
-              0 0 80px #f4efd1;
-          `}
-      }
+    display: grid;
+    width: 70px;
+    left: 300px;
+    top: 60%;
+    background-size: 70px;
+    transform: translateY(${({ tam }) => 0 + tam * 4 + 'px'});
+    div {
+      width: 25px;
+      height: 40px;
+      border-top: 4px solid ${({ ligar }) => (ligar ? '#f4efd1' : 'black')};
+      border-left: 2px solid;
+      border-right: 2px solid;
+      ${({ ligar }) =>
+        ligar &&
+        css`
+          border-top: 4px solid #f4efd1;
+          border-right: 4px solid #f4efd1;
+          border-left: 4px solid #f4efd1;
+          box-shadow: 0 0 5px #f4efd1, 0 0 30px #f4efd1, 0 0 40px #f4efd1,
+            0 0 80px #f4efd1;
+        `}
     }
-  
+  }
 `;
 
 export const Principal = styled.img<{ tam: number; screen: number }>`
@@ -262,7 +261,7 @@ export const Clock3 = styled.div<{
   height: 400px;
   background-size: 100%;
   z-index: 200;
-  transform: translateY(${({ tam }) => (0 + tam * 4) + 'px'});
+  transform: translateY(${({ tam }) => 0 + tam * 4 + 'px'});
   transition: 0.3s;
 
   img {

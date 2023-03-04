@@ -70,22 +70,22 @@ export const display = (tam: number, screen: number) => {
 
 
 
-// const [mousePosition, setMousePosition] = useState<number | null >(
-//   null,
-// );
+const [mousePosition, setMousePosition] = useState<number | null >(
+  null,
+);
 
-// useEffect(() => {
-//   function handleMouseMove(event: MouseEvent | MouseEventInit): void {
+useEffect(() => {
+  function handleMouseMove(event: MouseEvent | MouseEventInit): void {
     
-//     if ('pageX' in event && 'pageY' in event) {
-//       const { pageX: x, pageY: y } = event ;
-//       if (x && y ) {    
-//         setMousePosition(x + y);
-//       }
-//     }
-//   }
+    if ('pageX' in event && 'pageY' in event) {
+      const { pageX: x, pageY: y } = event ;
+      if (x && y ) {    
+        setMousePosition(x + y);
+      }
+    }
+  }
 
-//   window.addEventListener('mousemove', handleMouseMove);
+  window.addEventListener('mousemove', handleMouseMove);
 
-//   return () => window.removeEventListener('mousemove', handleMouseMove);
-// }, []);
+  return () => window.removeEventListener('mousemove', handleMouseMove);
+}, []);

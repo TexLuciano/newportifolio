@@ -224,9 +224,7 @@ export const Clock = styled.div<{
   }
 `;
 
-export const Clock2 = styled.div<{
-  tam: number;
-}>`
+export const Clock2 = styled.div<{tam: number;}>`
   background: url(${test3}) no-repeat;
   position: absolute;
   right: -80px;
@@ -236,7 +234,7 @@ export const Clock2 = styled.div<{
   height: 650px;
   background-size: 100%;
   z-index: 200;
-  transform: translateX(${({ tam }) => 0 + tam * 2 + 'px'});
+  transform: translateX(${({ tam }) => 0 + tam * 4 + 'px'});
   transition: 0.3s;
   display: grid;
   place-content: center;

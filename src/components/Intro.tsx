@@ -109,6 +109,7 @@ interface Props {
 }
 
 const Intro = ({ screen, tam }: Props) => {
+  
   const [text] = useTypewriter({
     words: ['Sistema Iniciado', 'Luciano Martinello'],
     loop: 1,

@@ -12,7 +12,6 @@ export const Container = styled.section<{ tam: number }>`
   place-items: center;
   place-content: center;
   overflow: hidden;
-  background: rgb(30, 57, 60);
   background: linear-gradient(
     270deg,
     rgba(30, 57, 60, 1) 0%,

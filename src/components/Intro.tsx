@@ -78,7 +78,7 @@ const ContainerIntro = styled.div<{
   }
 `;
 
-const Palavra = styled.span<{ text: string; length: number; fontSize: number }>`
+const Word = styled.span<{ text: string; length: number; fontSize: number }>`
   border-right: ${({ text, length }) =>
     text.length >= length ? 'none' : '2px solid #fff'};
   color: #fff;
@@ -109,7 +109,7 @@ interface Props {
 }
 
 const Intro = ({ screen, tam }: Props) => {
-  
+
   const [text] = useTypewriter({
     words: ['Sistema Iniciado', 'Luciano Martinello'],
     loop: 1,
@@ -121,7 +121,7 @@ const Intro = ({ screen, tam }: Props) => {
   });
 
   const [text3] = useTypewriter({
-    words: ['', '', '', 'Front End &'],
+    words: ['', '', '', 'Front End'],
     loop: 1,
   });
   const [text4] = useTypewriter({
@@ -135,38 +135,38 @@ const Intro = ({ screen, tam }: Props) => {
         <img src={texfoto} alt="foto perfil" />
 
         <Int>
-          <Palavra
+          <Word
             fontSize={screen}
             text={text}
             length={18}
             className="title-inicial"
           >
             {text}{' '}
-          </Palavra>
-          <Palavra
+          </Word>
+          <Word
             fontSize={screen}
             text={text2}
             length={13}
             className="title-inicial"
           >
             {text2}
-          </Palavra>
-          <Palavra
+          </Word>
+          <Word
             fontSize={screen}
             text={text3}
             length={11}
             className="title-inicial"
           >
             {text3}
-          </Palavra>
-          <Palavra
+          </Word>
+          {/* <Palavra
             fontSize={screen}
             text={text4}
             length={14}
             className="title-inicial"
           >
             {text4}
-          </Palavra>
+          </Palavra> */}
         </Int>
       </ContainerIntro>
     </>

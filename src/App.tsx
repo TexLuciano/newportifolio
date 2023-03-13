@@ -5,23 +5,22 @@ import Home from './pages/Home';
 import './style/styleinicial.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Contato from './pages/Contato';
+import Loader from './components/loader';
 
 const Container = styled.div``;
 
 function App() {
-  const spinner = document.getElementById('spinner');
-  const [load, setLoad] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  if (spinner) {
-    setTimeout(() => {
-      spinner.style.display = 'none';
-      setLoad(false);
-    }, 1100);
-  }
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 1100);
 
   return (
     <>
-      {!load && (
+      {isLoading ? (
+        <Loader />
+      ) : (
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />

@@ -80,7 +80,7 @@ const LoaderConteiner = styled.div`
   }
 `;
 
-export const Loader = () => {
+ const Loader = () => {
   return (
     <LoaderConteiner>
       <div>
@@ -89,3 +89,4 @@ export const Loader = () => {
     </LoaderConteiner>
   );
 };
+export default Loader

@@ -15,7 +15,6 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
   const [background, setBaground] = useState(telafixa);
   const [screen, setScreen] = useState(window.innerWidth);
 
-
   useEffect(() => {
     const handleResize = () => {
       setScreen(window.innerWidth);
@@ -44,21 +43,22 @@ export function TelaInicial({ valorScroll }: { valorScroll: number }) {
     }
   }, [screen]);
 
-
   return (
     <>
       <C.Container tam={valorScroll}>
         <C.Div className="container-clock">
-          <C.Principal
-            screen={screen}
-            onMouseMove={ligar}
-            className="computer"
-            src={background}
-            tam={valorScroll / 50}
-            alt=""
-          />
+          {screen && (
+            <C.Principal
+              screen={screen}
+              onMouseMove={ligar}
+              className="computer"
+              src={background}
+              tam={valorScroll / 50}
+              alt=""
+            />
+          )}
 
-          <C.ContainerLamp tam={valorScroll} ligar={ligarLuz} >
+          <C.ContainerLamp tam={valorScroll} ligar={ligarLuz}>
             <div></div>
           </C.ContainerLamp>
           <C.Clock className="clock1" tam={valorScroll}>

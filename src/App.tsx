@@ -5,7 +5,8 @@ import Home from './pages/Home';
 import './style/styleinicial.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Contato from './pages/Contato';
-import Loader from './components/loader';
+import { Loader } from './components/loader';
+
 
 const Container = styled.div``;
 
@@ -19,7 +20,7 @@ function App() {
   return (
     <>
       {isLoading ? (
-        <Loader />
+        <Loader/>
       ) : (
         <Router>
           <Routes>
